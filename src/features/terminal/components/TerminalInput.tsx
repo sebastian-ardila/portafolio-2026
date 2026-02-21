@@ -99,7 +99,6 @@ export function TerminalInput() {
   const dispatch = useAppDispatch()
   const { t } = useTranslation('terminal')
   const input = useAppSelector((s) => s.terminal.currentInput)
-  const history = useAppSelector((s) => s.terminal.history)
   const isMaximized = useAppSelector((s) => s.terminal.isMaximized)
   const isMinimized = useAppSelector((s) => s.terminal.isMinimized)
   const bookingOpen = useAppSelector((s) => s.booking.isOpen)
@@ -158,7 +157,7 @@ export function TerminalInput() {
 
   useEffect(() => {
     focusInput()
-  }, [focusInput, isMaximized, isMinimized, history, bookingOpen])
+  }, [focusInput, isMaximized, isMinimized, bookingOpen])
 
   function selectSuggestion(cmd: string) {
     dispatch(setInput(cmd))
@@ -198,6 +197,7 @@ export function TerminalInput() {
       if (e.key === 'Enter' && selectedIndex >= 0) {
         e.preventDefault()
         executeCommand(suggestions[selectedIndex])
+        inputRef.current?.blur()
         return
       }
     }
@@ -205,6 +205,7 @@ export function TerminalInput() {
     if (e.key === 'Enter') {
       dispatch(submitCommand())
       execute(input)
+      inputRef.current?.blur()
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       dispatch(navigateHistory('up'))
