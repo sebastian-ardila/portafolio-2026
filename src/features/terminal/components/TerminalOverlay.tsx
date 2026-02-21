@@ -16,7 +16,36 @@ import { useTerminalCommands } from '../hooks/useTerminalCommands'
 import { TerminalInput } from './TerminalInput'
 import { Tooltip } from '@/shared/components/Tooltip'
 
-function TerminalLine({ text }: { text: string }) {
+function InlineCommands({ text, onRunCommand }: { text: string; onRunCommand?: (cmd: string) => void }) {
+  if (!onRunCommand) return <>{text}</>
+
+  // Match "command" (in quotes) to make them clickable
+  const parts = text.split(/("[\w\s-]+")/g)
+  if (parts.length === 1) return <>{text}</>
+
+  return (
+    <>
+      {parts.map((part, i) => {
+        const match = part.match(/^"([\w\s-]+)"$/)
+        if (match) {
+          const cmd = match[1]
+          return (
+            <button
+              key={i}
+              onClick={() => onRunCommand(cmd)}
+              className="cursor-pointer text-cyan/60 underline-offset-4 transition-all hover:text-cyan hover:underline"
+            >
+              {cmd}
+            </button>
+          )
+        }
+        return <span key={i}>{part}</span>
+      })}
+    </>
+  )
+}
+
+function TerminalLine({ text, onRunCommand }: { text: string; onRunCommand?: (cmd: string) => void }) {
   // Headings / titles (match translated versions too)
   if (/^(Available commands|Comandos disponibles)/.test(text) || text.startsWith('\uD83C\uDF89') || text.startsWith('\u2705'))
     return <span className="text-cyan">{text}</span>
@@ -73,8 +102,8 @@ function TerminalLine({ text }: { text: string }) {
     )
   }
 
-  // Default
-  return <span className="text-foreground/60">{text}</span>
+  // Default — with inline clickable commands
+  return <span className="text-foreground/60"><InlineCommands text={text} onRunCommand={onRunCommand} /></span>
 }
 
 export function TerminalOverlay() {
@@ -147,11 +176,36 @@ export function TerminalOverlay() {
     }
   }, [isOpen, isMinimized, dispatch])
 
-  // Lock page scroll while terminal is open
+  // Lock page scroll while terminal is open (desktop + mobile)
   useEffect(() => {
     if (isOpen && !isMinimized) {
-      document.body.style.overflow = 'hidden'
-      return () => { document.body.style.overflow = '' }
+      const html = document.documentElement
+      const { body } = document
+      html.style.overflow = 'hidden'
+      body.style.overflow = 'hidden'
+
+      // Prevent touch scroll on the page behind the terminal on mobile
+      const preventTouch = (e: TouchEvent) => {
+        const target = e.target as HTMLElement
+        if (target.closest('[data-terminal-body]')) return
+        e.preventDefault()
+      }
+
+      // Prevent wheel scroll on anything outside the terminal body
+      const preventWheel = (e: WheelEvent) => {
+        const target = e.target as HTMLElement
+        if (target.closest('[data-terminal-body]')) return
+        e.preventDefault()
+      }
+
+      document.addEventListener('touchmove', preventTouch, { passive: false })
+      document.addEventListener('wheel', preventWheel, { passive: false })
+      return () => {
+        html.style.overflow = ''
+        body.style.overflow = ''
+        document.removeEventListener('touchmove', preventTouch)
+        document.removeEventListener('wheel', preventWheel)
+      }
     }
   }, [isOpen, isMinimized])
 
@@ -182,18 +236,18 @@ export function TerminalOverlay() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            style={{ height: '100dvh' }}
-            className="fixed inset-x-0 top-0 z-50 flex items-end justify-center bg-background/90 p-0 backdrop-blur-sm sm:items-center sm:p-4"
+            style={{ height: '100dvh', width: '100dvw' }}
+            className="fixed left-0 top-0 z-50 flex items-end justify-center overflow-hidden bg-background/90 p-0 backdrop-blur-sm sm:items-center sm:p-4"
             onClick={(e) => {
               if (e.target === e.currentTarget) dispatch(minimizeTerminal())
             }}
           >
-            <div className={`flex w-full flex-col items-center ${isMaximized ? 'h-full w-full' : 'h-full sm:h-auto sm:max-w-2xl'}`}>
+            <div className={`flex max-w-full flex-col items-center ${isMaximized ? 'h-full w-full' : 'h-full w-full sm:h-auto sm:max-w-2xl'}`}>
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-              className={`flex flex-col overflow-hidden border-cyan/20 bg-[#0d0d14] shadow-[0_0_40px_rgba(0,245,255,0.1)] transition-all duration-300 sm:rounded-xl sm:border ${
+              className={`flex max-w-full flex-col overflow-hidden border-cyan/20 bg-[#0d0d14] shadow-[0_0_40px_rgba(0,245,255,0.1)] transition-all duration-300 sm:rounded-xl sm:border ${
                 isMaximized ? 'h-full w-full' : 'h-full w-full sm:h-auto'
               }`}
             >
@@ -239,36 +293,9 @@ export function TerminalOverlay() {
                 <div className="w-[36px]" />
               </div>
 
-              {/* Terminal body */}
-              <div
-                ref={scrollRef}
-                data-terminal-body
-                className={`min-h-0 flex-1 overflow-y-auto p-3 font-mono text-sm leading-relaxed transition-all duration-300 sm:p-4 ${
-                  isMaximized ? '' : 'sm:h-80 sm:flex-none'
-                }`}
-              >
-                {history.map((line, i) => {
-                  // Resolve i18nKey if present
-                  const displayText = line.i18nKey ? t(line.i18nKey) : line.text
-
-                  return line.type === 'input' ? (
-                    <div key={i} className="text-cyan">{displayText}</div>
-                  ) : (
-                    <div key={i} className="whitespace-pre-wrap">
-                      {displayText.split('\n').map((row, j) => (
-                        <div key={j}>
-                          <TerminalLine text={row} />
-                        </div>
-                      ))}
-                    </div>
-                  )
-                })}
-                <TerminalInput />
-              </div>
-
-              {/* Quick commands — inside the terminal card on mobile */}
+              {/* Quick commands — inside the terminal card on mobile, below header */}
               {!isMaximized && (
-                <div className="shrink-0 border-t border-card-border px-3 py-2 font-mono text-xs sm:hidden">
+                <div className="shrink-0 border-b border-card-border px-3 py-2 font-mono text-xs sm:hidden">
                   <div className="flex items-center justify-between gap-2">
                     <button
                       onClick={() => runCommand('book')}
@@ -307,6 +334,33 @@ export function TerminalOverlay() {
                   </div>
                 </div>
               )}
+
+              {/* Terminal body */}
+              <div
+                ref={scrollRef}
+                data-terminal-body
+                className={`min-h-0 min-w-0 flex-1 overflow-x-hidden overflow-y-auto p-3 font-mono text-sm leading-relaxed transition-all duration-300 sm:p-4 ${
+                  isMaximized ? '' : 'sm:h-80 sm:flex-none'
+                }`}
+              >
+                {history.map((line, i) => {
+                  // Resolve i18nKey if present
+                  const displayText = line.i18nKey ? t(line.i18nKey) : line.text
+
+                  return line.type === 'input' ? (
+                    <div key={i} className="text-cyan">{displayText}</div>
+                  ) : (
+                    <div key={i} className="whitespace-pre-wrap break-words">
+                      {displayText.split('\n').map((row, j) => (
+                        <div key={j}>
+                          <TerminalLine text={row} onRunCommand={runCommand} />
+                        </div>
+                      ))}
+                    </div>
+                  )
+                })}
+                <TerminalInput />
+              </div>
             </motion.div>
 
             {/* Quick commands — below card on desktop */}

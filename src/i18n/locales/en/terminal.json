@@ -45,5 +45,6 @@
     "maximize": "Maximize",
     "maximizeDisabled": "Desktop only"
   },
+  "enterHint": "press enter to send",
   "notFound": "Command not found: {{cmd}}\nType \"help\" for available commands."
 }

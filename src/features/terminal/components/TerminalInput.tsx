@@ -97,6 +97,7 @@ function ResumePicker() {
 
 export function TerminalInput() {
   const dispatch = useAppDispatch()
+  const { t } = useTranslation('terminal')
   const input = useAppSelector((s) => s.terminal.currentInput)
   const history = useAppSelector((s) => s.terminal.history)
   const isMaximized = useAppSelector((s) => s.terminal.isMaximized)
@@ -300,6 +301,14 @@ export function TerminalInput() {
         />
         <span className="h-4 w-2 animate-pulse bg-cyan" />
       </div>
+
+      {/* Enter hint — visible when user has typed something */}
+      {input.trim().length > 0 && (
+        <div className="mt-1 flex items-center gap-1.5 pl-5 font-mono text-[10px] text-foreground/25">
+          <span>{t('enterHint')}</span>
+          <span className="text-[9px]">↵</span>
+        </div>
+      )}
     </div>
   )
 }
