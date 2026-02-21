@@ -33,6 +33,8 @@ function SuspenseWrapper({ children }: { children: React.ReactNode }) {
   )
 }
 
+const basename = import.meta.env.BASE_URL
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -72,4 +74,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-])
+], { basename })
