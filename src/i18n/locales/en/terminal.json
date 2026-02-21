@@ -1,0 +1,49 @@
+{
+  "welcome": "This is not a portfolio. It's an interface.\nType \"help\" for available commands.\n",
+  "cleared": "Terminal cleared.\n",
+  "help": {
+    "title": "Available commands:",
+    "about": "  about                \u2014 About Sebastian",
+    "skills": "  skills               \u2014 Core skills",
+    "experience": "  experience           \u2014 Work history",
+    "contact": "  contact              \u2014 Contact info",
+    "resume": "  resume               \u2014 Download resume",
+    "book": "  book                 \u2014 Book a meeting",
+    "clear": "  clear                \u2014 Clear terminal",
+    "exit": "  exit                 \u2014 Close terminal",
+    "sudo": "  sudo hire-sebastian  \u2014 Book a meeting with Sebastian"
+  },
+  "about": {
+    "yearsExp": "{{count}}+ years of experience building scalable frontend",
+    "line2": "applications with React, TypeScript, and Node.js.",
+    "techMastered": "{{count}}+ technologies mastered",
+    "education": "Bachelor of Computer and Systems Engineering - UTP",
+    "location": "Location: {{location}}"
+  },
+  "resume": {
+    "prompt": "Select a version to download:",
+    "en": "Download resume in English",
+    "es": "Download resume in Spanish",
+    "downloading": "Downloading resume..."
+  },
+  "book": {
+    "opening": "Opening booking calendar..."
+  },
+  "sudo": {
+    "achievement": "ACHIEVEMENT UNLOCKED: Secret Command!",
+    "sending": "Sending hiring request...",
+    "progress": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 100%",
+    "received": "Request received!",
+    "openingCalendar": "   Opening booking calendar..."
+  },
+  "quickCommands": {
+    "book": "Book a meeting",
+    "about": "About me"
+  },
+  "tooltips": {
+    "minimize": "Minimize",
+    "maximize": "Maximize",
+    "maximizeDisabled": "Desktop only"
+  },
+  "notFound": "Command not found: {{cmd}}\nType \"help\" for available commands."
+}

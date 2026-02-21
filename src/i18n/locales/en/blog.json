@@ -1,0 +1,14 @@
+{
+  "sectionLabel": "Blog",
+  "heading": "Latest Posts",
+  "viewAllPosts": "View All Posts",
+  "allPosts": "All Posts",
+  "searchPlaceholder": "Search posts...",
+  "loading": "Loading...",
+  "loadingPost": "Loading post...",
+  "noPosts": "No posts found.",
+  "minRead": "{{count}} min read",
+  "readMore": "Read more",
+  "backToBlog": "Back to Blog",
+  "all": "All"
+}

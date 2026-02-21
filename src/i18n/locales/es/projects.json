@@ -1,0 +1,30 @@
+{
+  "sectionLabel": "Mi Trabajo",
+  "heading": "Proyectos",
+  "live": "Ver",
+  "code": "C\u00f3digo",
+  "liveDemo": "Demo en Vivo",
+  "sourceCode": "C\u00f3digo Fuente",
+  "items": {
+    "rmp-lowcode": {
+      "title": "Plataforma Low-Code RunMyProcess",
+      "description": "Plataforma low-code empresarial con motor de renderizado y m\u00e1s de 50 componentes personalizados.",
+      "longDescription": "Lider\u00e9 el redise\u00f1o completo de la plataforma RunMyProcess con enfoque en arquitectura escalable, experiencia de usuario y rendimiento. Desarroll\u00e9 e integr\u00e9 componentes para el motor de renderizado, mejorando los tiempos de carga en un 35% y reduciendo errores de renderizado visual en un 40%. Optimic\u00e9 la plataforma low-code interna reduciendo bugs en un 25% y el rendimiento de build en un 20%."
+    },
+    "veritran-platform": {
+      "title": "Plataforma Financiera VeriTran",
+      "description": "Plataforma low-code para instituciones financieras con funcionalidades en tiempo real.",
+      "longDescription": "Mejor\u00e9 una plataforma low-code que sirve a instituciones financieras usando React.js y TypeScript. Contribu\u00ed a la transici\u00f3n de JavaScript puro a una arquitectura basada en componentes. Integr\u00e9 WebSockets para comunicaci\u00f3n en tiempo real. Constru\u00ed herramientas de construcci\u00f3n visual incluyendo gu\u00edas drag & drop y ajustes de componentes basados en zoom. Mejor\u00e9 el rendimiento mediante code splitting."
+    },
+    "crypto-platform": {
+      "title": "Plataforma de Pagos e Inversi\u00f3n Crypto",
+      "description": "Sistema de pagos en criptomonedas con seguimiento de precios en tiempo real.",
+      "longDescription": "Constru\u00ed un sistema de pago e inversi\u00f3n en criptomonedas con un frontend din\u00e1mico en React.js. Lider\u00e9 un equipo de dos desarrolladores y un dise\u00f1ador UX. Migr\u00e9 el proyecto a Remix.js e implement\u00e9 GraphQL para unificar el esquema API. Desarroll\u00e9 visualizaci\u00f3n de precios en tiempo real con Socket.io. Gestion\u00e9 MongoDB para grandes vol\u00famenes de datos transaccionales."
+    },
+    "compiler-pl0": {
+      "title": "Compilador PL/0 en Python",
+      "description": "Implementaci\u00f3n acad\u00e9mica de compilador para el lenguaje de programaci\u00f3n PL/0.",
+      "longDescription": "Constru\u00ed un compilador completo para el lenguaje de programaci\u00f3n PL/0 en Python como parte del trabajo de ingenier\u00eda de sistemas. Implementa las fases de an\u00e1lisis l\u00e9xico, parsing y generaci\u00f3n de c\u00f3digo. Una demostraci\u00f3n de fundamentos de ciencias de la computaci\u00f3n y teor\u00eda de lenguajes."
+    }
+  }
+}

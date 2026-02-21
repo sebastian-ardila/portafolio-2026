@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "about": "Sobre m\u00ed",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "home": "Inicio"
+  },
+  "footer": {
+    "copyright": "\u00a9 {{year}} {{name}}. Hecho con React & TypeScript."
+  },
+  "booking": {
+    "title": "Agendar una Reuni\u00f3n"
+  },
+  "notFound": {
+    "title": "404",
+    "heading": "P\u00e1gina No Encontrada",
+    "description": "La p\u00e1gina que buscas no existe o ha sido movida.",
+    "backHome": "Volver al Inicio"
+  },
+  "all": "Todos"
+}

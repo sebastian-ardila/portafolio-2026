@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "Trayectoria Profesional",
+  "heading": "Experiencia",
+  "current": "Actual",
+  "roles": {
+    "rmp-director": {
+      "role": "Director de Experiencia de Usuario",
+      "description": "Lider\u00e9 la implementaci\u00f3n de una nueva experiencia de usuario y el equipo de desarrollo en RunMyProcess, impulsando el redise\u00f1o completo de la plataforma con enfoque en arquitectura escalable, mejoras de UX y optimizaci\u00f3n de rendimiento. Desarroll\u00e9 e integr\u00e9 componentes para el motor de renderizado, mejorando los tiempos de carga en un 35% y reduciendo errores visuales en un 40%. Optimic\u00e9 la plataforma low-code interna reduciendo bugs en un 25% y mejorando el rendimiento de build en un 20%. Mantuve documentaci\u00f3n t\u00e9cnica cubriendo m\u00e1s de 50 componentes en Confluence."
+    },
+    "rmp-senior": {
+      "role": "Ingeniero de Software Senior",
+      "description": "Lider\u00e9 un equipo multidisciplinario de m\u00e1s de 8 desarrolladores y dise\u00f1adores para modernizar la landing page, el sitio de documentaci\u00f3n y la plataforma low-code interna, aumentando el engagement de usuarios en un 25%. Encabec\u00e9 un redise\u00f1o integral de UI con enfoque en arquitectura escalable y usabilidad, mejorando los puntajes en un 30%. Colabor\u00e9 con equipos internacionales de India, EE.UU., Marruecos, Jap\u00f3n, Australia y Colombia."
+    },
+    "veritran-engineer": {
+      "role": "Ingeniero de Software II",
+      "description": "Mejor\u00e9 y expand\u00ed una plataforma low-code para instituciones financieras usando React.js y TypeScript. Contribu\u00ed a la transici\u00f3n de la plataforma de JavaScript puro a un sistema basado en componentes. Integr\u00e9 Node.js y WebSockets para comunicaci\u00f3n en tiempo real. Constru\u00ed herramientas de construcci\u00f3n visual incluyendo gu\u00edas drag & drop y ajustes de componentes basados en zoom. Mejor\u00e9 el rendimiento para grandes vol\u00famenes de datos mediante code splitting."
+    },
+    "veritran-consultant": {
+      "role": "Consultor de Implementaci\u00f3n",
+      "description": "Apoy\u00e9 la integraci\u00f3n de la plataforma low-code en BancoEstado. Desarroll\u00e9 interfaces frontend usando HTML, CSS y JavaScript para mejorar la interacci\u00f3n de clientes con servicios bancarios. Apliqu\u00e9 tecnolog\u00edas frontend y backend para mejorar la accesibilidad y experiencia de usuario en plataformas financieras."
+    },
+    "excelascent": {
+      "role": "Desarrollador Full Stack",
+      "description": "Desarroll\u00e9 un sistema de pago e inversi\u00f3n en criptomonedas con un frontend din\u00e1mico en React.js. Lider\u00e9 un equipo de dos desarrolladores y un dise\u00f1ador UX. Migr\u00e9 el proyecto a Remix.js e implement\u00e9 GraphQL para unificar el esquema API. Gestion\u00e9 MongoDB para grandes vol\u00famenes de datos transaccionales."
+    },
+    "td7": {
+      "role": "Desarrollador Web Backend",
+      "description": "Desarroll\u00e9 una aplicaci\u00f3n de visualizaci\u00f3n de precios de criptomonedas en tiempo real usando Socket.io. Constru\u00ed servicios backend con Express.js y MongoDB. Encabec\u00e9 el desarrollo de una wallet de criptomonedas y plataforma ICO basada en Ethereum."
+    },
+    "onyxsoft": {
+      "role": "Desarrollador de Software",
+      "description": "Desarroll\u00e9 aplicaciones para mejorar la gesti\u00f3n operacional de cadenas de restaurantes. Us\u00e9 herramientas de desarrollo r\u00e1pido (Webdev, Windev) para desplegar nuevas funcionalidades eficientemente. Optimic\u00e9 sistemas de gesti\u00f3n de pedidos, procesamiento de pagos y manejo de inventario."
+    }
+  }
+}

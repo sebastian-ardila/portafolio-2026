@@ -1,0 +1,49 @@
+{
+  "welcome": "Esto no es un portafolio. Es una interfaz.\nEscribe \"help\" para ver los comandos disponibles.\n",
+  "cleared": "Terminal limpiada.\n",
+  "help": {
+    "title": "Comandos disponibles:",
+    "about": "  about                \u2014 Sobre Sebastian",
+    "skills": "  skills               \u2014 Habilidades principales",
+    "experience": "  experience           \u2014 Historial laboral",
+    "contact": "  contact              \u2014 Info de contacto",
+    "resume": "  resume               \u2014 Descargar CV",
+    "book": "  book                 \u2014 Agendar reuni\u00f3n",
+    "clear": "  clear                \u2014 Limpiar terminal",
+    "exit": "  exit                 \u2014 Cerrar terminal",
+    "sudo": "  sudo hire-sebastian  \u2014 Agendar reuni\u00f3n con Sebastian"
+  },
+  "about": {
+    "yearsExp": "{{count}}+ a\u00f1os de experiencia construyendo frontend escalable",
+    "line2": "con React, TypeScript y Node.js.",
+    "techMastered": "{{count}}+ tecnolog\u00edas dominadas",
+    "education": "Ingeniero de Sistemas y Computaci\u00f3n - UTP",
+    "location": "Ubicaci\u00f3n: {{location}}"
+  },
+  "resume": {
+    "prompt": "Selecciona una versi\u00f3n para descargar:",
+    "en": "Descargar curr\u00edculum en ingl\u00e9s",
+    "es": "Descargar curr\u00edculum en espa\u00f1ol",
+    "downloading": "Descargando curr\u00edculum..."
+  },
+  "book": {
+    "opening": "Abriendo calendario de reservas..."
+  },
+  "sudo": {
+    "achievement": "LOGRO DESBLOQUEADO: \u00a1Comando Secreto!",
+    "sending": "Enviando solicitud de contrataci\u00f3n...",
+    "progress": "\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 100%",
+    "received": "\u00a1Solicitud recibida!",
+    "openingCalendar": "   Abriendo calendario de reservas..."
+  },
+  "quickCommands": {
+    "book": "Agendar reunión",
+    "about": "Sobre mí"
+  },
+  "tooltips": {
+    "minimize": "Minimizar",
+    "maximize": "Maximizar",
+    "maximizeDisabled": "Solo en escritorio"
+  },
+  "notFound": "Comando no encontrado: {{cmd}}\nEscribe \"help\" para ver los comandos disponibles."
+}

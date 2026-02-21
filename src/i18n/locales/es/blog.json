@@ -1,0 +1,14 @@
+{
+  "sectionLabel": "Blog",
+  "heading": "\u00daltimas Publicaciones",
+  "viewAllPosts": "Ver Todas las Publicaciones",
+  "allPosts": "Todas las Publicaciones",
+  "searchPlaceholder": "Buscar publicaciones...",
+  "loading": "Cargando...",
+  "loadingPost": "Cargando publicaci\u00f3n...",
+  "noPosts": "No se encontraron publicaciones.",
+  "minRead": "{{count}} min de lectura",
+  "readMore": "Leer m\u00e1s",
+  "backToBlog": "Volver al Blog",
+  "all": "Todas"
+}

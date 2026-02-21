@@ -1,0 +1,27 @@
+{
+  "sectionLabel": "About Me",
+  "heading": "Who I Am",
+  "bio": "Software Engineer with 9+ years of experience specializing in React, TypeScript, and scalable frontend architecture. Currently directing UX at RunMyProcess, building enterprise-grade low-code platforms. Previously built real-time financial tools at VeriTran and crypto systems at ExcelAscent. Bachelor's in Computer and Systems Engineering from UTP.",
+  "stats": {
+    "yearsExperience": "years experience",
+    "technologies": "technologies",
+    "cupsOfCoffee": "cups of coffee"
+  },
+  "infoCards": {
+    "currentRole": "Current Role",
+    "currentRoleValue": "Director of User Experience",
+    "currentRoleSub": "RunMyProcess",
+    "education": "Education",
+    "educationValue": "B.S. Computer & Systems Engineering",
+    "educationSub": "Universidad Tecnol\u00f3gica de Pereira",
+    "basedIn": "Based in",
+    "basedInSub": "Available for remote work worldwide",
+    "specialization": "Specialization",
+    "specializationValue": "Frontend Architecture",
+    "specializationSub": "React \u00b7 TypeScript \u00b7 Design Systems"
+  },
+  "journey": {
+    "title": "My Journey",
+    "now": "Now"
+  }
+}

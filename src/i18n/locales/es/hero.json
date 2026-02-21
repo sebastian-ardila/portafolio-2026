@@ -1,0 +1,17 @@
+{
+  "greeting": "\u00a1Hola, mundo! Soy",
+  "openTerminal": "abrir terminal",
+  "bookMeeting": "Agendar Reuni\u00f3n",
+  "downloadResume": "Descargar CV",
+  "github": "GitHub",
+  "latestPosts": "\u00daltimas publicaciones",
+  "viewAllPosts": "Ver todas las publicaciones",
+  "years": "{{count}}+ a\u00f1os",
+  "technologies": "{{count}}+ tecnolog\u00edas",
+  "roles": [
+    "Director de Experiencia de Usuario",
+    "Ingeniero Frontend Senior",
+    "Especialista en React & TypeScript",
+    "Constructor de Plataformas Low-Code"
+  ]
+}

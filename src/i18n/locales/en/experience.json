@@ -1,0 +1,35 @@
+{
+  "sectionLabel": "Career Journey",
+  "heading": "Experience",
+  "current": "Current",
+  "roles": {
+    "rmp-director": {
+      "role": "Director of User Experience",
+      "description": "Led the implementation of a new user experience and the development team at RunMyProcess, driving the complete redesign of the platform with a focus on scalable architecture, UX improvements, and performance optimization. Developed and integrated components for the rendering engine, improving page load times by 35% and reducing visual rendering errors by 40%. Optimized the internal low-code platform reducing bugs by 25% and improving build performance by 20%. Maintained technical documentation covering 50+ components in Confluence."
+    },
+    "rmp-senior": {
+      "role": "Senior Software Engineer",
+      "description": "Led a multidisciplinary team of 8+ developers and designers to modernize the landing page, documentation site, and internal low-code platform, increasing user engagement by 25%. Spearheaded a comprehensive UI redesign with a focus on scalable architecture and usability, improving scores by 30%. Collaborated with international teams across India, USA, Morocco, Japan, Australia, and Colombia."
+    },
+    "veritran-engineer": {
+      "role": "Software Engineer II",
+      "description": "Enhanced and expanded a low-code platform for financial institutions using React.js and TypeScript. Contributed to transitioning the platform from pure JavaScript to a component-based system. Integrated Node.js and WebSockets for real-time communication. Built visual construction tools including drag & drop guides and zoom-based component adjustments. Improved performance for large data volumes via code splitting."
+    },
+    "veritran-consultant": {
+      "role": "Implementation Consultant",
+      "description": "Supported the integration of the low-code platform at BancoEstado. Developed frontend interfaces using HTML, CSS, and JavaScript to improve customer interaction with banking services. Applied frontend and backend technologies to enhance accessibility and user experience in financial platforms."
+    },
+    "excelascent": {
+      "role": "Full Stack Developer",
+      "description": "Developed a cryptocurrency payment and investment management system with a dynamic React.js frontend. Led a team of two developers and a UX designer. Migrated the project to Remix.js and implemented GraphQL to unify the API schema. Managed MongoDB for large volumes of transactional data."
+    },
+    "td7": {
+      "role": "Backend Web Developer",
+      "description": "Developed a real-time cryptocurrency price visualization application using Socket.io. Built backend services with Express.js and MongoDB. Spearheaded the development of a cryptocurrency wallet and ICO platform based on Ethereum."
+    },
+    "onyxsoft": {
+      "role": "Software Developer",
+      "description": "Developed applications to enhance operational management for chain restaurants. Used rapid development tools (Webdev, Windev) to deploy new features efficiently. Optimized order management, payment processing, and inventory handling systems."
+    }
+  }
+}

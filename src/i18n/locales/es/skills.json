@@ -1,0 +1,30 @@
+{
+  "sectionLabel": "Habilidades y Experiencia",
+  "heading": "\u00c1rbol de Habilidades",
+  "categories": {
+    "all": "Todas",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Herramientas",
+    "design": "Dise\u00f1o"
+  },
+  "descriptions": {
+    "React": "Lider\u00e9 el equipo de desarrollo detr\u00e1s del redise\u00f1o de la plataforma RunMyProcess, construyendo m\u00e1s de 50 componentes para el motor de renderizado y mejorando los tiempos de carga en un 35%. Contribu\u00ed a la transici\u00f3n del c\u00f3digo de JS puro a una arquitectura basada en componentes en VeriTran. Constru\u00ed el frontend de pagos crypto en ExcelAscent.",
+    "TypeScript": "Tip\u00e9 el motor de renderizado low-code de RunMyProcess y m\u00e1s de 50 componentes UI como parte del redise\u00f1o enfocado en arquitectura escalable. Mejor\u00e9 la plataforma financiera VeriTran con TypeScript estricto, reduciendo errores en tiempo de ejecuci\u00f3n.",
+    "JavaScript": "Lenguaje principal en todos los roles. Constru\u00ed funcionalidades frontend interactivas, integraciones en tiempo real, y contribu\u00ed a una migraci\u00f3n completa de JS a TypeScript en VeriTran.",
+    "HTML/CSS": "Estructur\u00e9 y estil\u00e9 interfaces para plataformas low-code empresariales, apps financieras y sistemas de pago.",
+    "Redux": "Gestion\u00e9 estado complejo de aplicaciones en la plataforma low-code RunMyProcess y herramientas financieras VeriTran, incluyendo flujos de datos en tiempo real e interacciones drag & drop.",
+    "Tailwind CSS": "Adoptado para desarrollo r\u00e1pido de UI en RunMyProcess y proyectos personales como este portafolio, permitiendo dise\u00f1os consistentes y responsivos.",
+    "WebSockets": "Integr\u00e9 comunicaci\u00f3n en tiempo real basada en WebSocket para la plataforma financiera VeriTran. Us\u00e9 Socket.io para visualizaci\u00f3n en vivo de precios de criptomonedas en ExcelAscent.",
+    "GraphQL": "Implement\u00e9 GraphQL para unificar el esquema API de la plataforma de pagos crypto, reemplazando m\u00faltiples endpoints REST con una capa de consulta flexible.",
+    "REST APIs": "Dise\u00f1\u00e9 y consum\u00ed servicios RESTful para plataformas empresariales, integraciones financieras y sistemas de pago en m\u00faltiples empresas.",
+    "Node.js": "Constru\u00ed servicios backend y herramientas en VeriTran. Desarroll\u00e9 l\u00f3gica del servidor para la plataforma crypto en ExcelAscent y sistemas internos en TD7.",
+    "Express.js": "Cre\u00e9 servidores API REST para el sistema de pagos crypto en ExcelAscent y servicios web backend en Tecnolog\u00eda Digital 7.",
+    "MongoDB": "Gestion\u00e9 grandes vol\u00famenes de datos transaccionales para la plataforma de inversi\u00f3n crypto en ExcelAscent. Usado para persistencia de datos en TD7.",
+    "Jest": "Escrib\u00ed pruebas unitarias y de integraci\u00f3n para componentes de plataforma low-code en RunMyProcess y m\u00f3dulos de aplicaciones financieras en VeriTran.",
+    "Git": "Control de versiones y colaboraci\u00f3n en todos los roles profesionales, gestionando bases de c\u00f3digo con m\u00faltiples contribuidores y flujos de lanzamiento.",
+    "Confluence": "Mantuve documentaci\u00f3n t\u00e9cnica cubriendo m\u00e1s de 50 componentes para el motor de renderizado RunMyProcess y gu\u00edas de plataforma interna.",
+    "Figma": "Lider\u00e9 el prototipado UX y dise\u00f1o para el redise\u00f1o de la plataforma RunMyProcess, definiendo la nueva experiencia de usuario y colaborando con el equipo de desarrollo para implementar interfaces pixel-perfect.",
+    "UI/UX Design": "Lider\u00e9 la implementaci\u00f3n de una nueva experiencia de usuario en RunMyProcess, impulsando un redise\u00f1o integral de UI que mejor\u00f3 la usabilidad en un 30% y definiendo el roadmap UX en 3 l\u00edneas de producto. Constru\u00ed herramientas de construcci\u00f3n visual con drag & drop en VeriTran."
+  }
+}

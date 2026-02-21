@@ -1,0 +1,30 @@
+{
+  "sectionLabel": "Skills & Expertise",
+  "heading": "Skill Tree",
+  "categories": {
+    "all": "All",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools",
+    "design": "Design"
+  },
+  "descriptions": {
+    "React": "Led the development team behind the RunMyProcess platform redesign, building 50+ components for the rendering engine and improving load times by 35%. Contributed to transitioning the codebase from pure JS to a component-based architecture at VeriTran. Built a crypto payment frontend at ExcelAscent.",
+    "TypeScript": "Typed the RunMyProcess low-code rendering engine and 50+ UI components as part of the platform-wide redesign focused on scalable architecture. Enhanced the VeriTran financial platform with strict TypeScript, reducing runtime errors.",
+    "JavaScript": "Core language across all roles. Built interactive frontend features, real-time integrations, and contributed to a full JS-to-TypeScript migration at VeriTran.",
+    "HTML/CSS": "Structured and styled interfaces for enterprise low-code platforms, financial apps, and client-facing payment systems.",
+    "Redux": "Managed complex application state in the RunMyProcess low-code platform and VeriTran financial tools, including real-time data flows and drag-and-drop interactions.",
+    "Tailwind CSS": "Adopted for rapid UI development at RunMyProcess and personal projects like this portfolio, enabling consistent, responsive designs.",
+    "WebSockets": "Integrated WebSocket-based real-time communication for the VeriTran financial platform. Used Socket.io for live cryptocurrency price visualization at ExcelAscent.",
+    "GraphQL": "Implemented GraphQL to unify the API schema of the crypto payment platform, replacing multiple REST endpoints with a single flexible query layer.",
+    "REST APIs": "Designed and consumed RESTful services for enterprise platforms, financial integrations, and payment systems across multiple companies.",
+    "Node.js": "Built backend services and tooling at VeriTran. Developed server-side logic for the crypto platform at ExcelAscent and internal systems at TD7.",
+    "Express.js": "Created REST API servers for the crypto payment system at ExcelAscent and backend web services at Tecnolog\u00eda Digital 7.",
+    "MongoDB": "Managed large volumes of transactional data for the crypto investment platform at ExcelAscent. Used for data persistence at TD7.",
+    "Jest": "Wrote unit and integration tests for low-code platform components at RunMyProcess and financial application modules at VeriTran.",
+    "Git": "Version control and collaboration across all professional roles, managing codebases with multiple contributors and release workflows.",
+    "Confluence": "Maintained technical documentation covering 50+ components for the RunMyProcess rendering engine and internal platform guidelines.",
+    "Figma": "Led UX prototyping and design for the RunMyProcess platform redesign, defining the new user experience and collaborating with the development team to implement pixel-perfect interfaces.",
+    "UI/UX Design": "Led the implementation of a new user experience at RunMyProcess, driving a comprehensive UI redesign that improved usability by 30% and defining the UX roadmap across 3 product lines. Built visual construction tools with drag & drop at VeriTran."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Sebastian Ardila Agudelo",
+  "role": "Director of User Experience",
+  "location": "Pereira, Colombia",
+  "achievements": {
+    "react-master": {
+      "title": "React Master",
+      "description": "7+ years building with React"
+    },
+    "ts-wizard": {
+      "title": "TypeScript Wizard",
+      "description": "Type-safe code enthusiast since 2018"
+    },
+    "ux-director": {
+      "title": "UX Director",
+      "description": "Leading design teams at enterprise scale"
+    },
+    "open-source": {
+      "title": "Open Source Contributor",
+      "description": "Contributing to the community"
+    },
+    "coffee-addict": {
+      "title": "Coffee Addict",
+      "description": "5000+ cups and counting"
+    },
+    "night-owl": {
+      "title": "Night Owl",
+      "description": "Best code written after midnight"
+    }
+  }
+}
