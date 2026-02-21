@@ -181,8 +181,17 @@ export function TerminalOverlay() {
     if (isOpen && !isMinimized) {
       const html = document.documentElement
       const { body } = document
+      const scrollY = window.scrollY
+
+      // Fix body in place to prevent iOS Safari viewport scrolling
       html.style.overflow = 'hidden'
       body.style.overflow = 'hidden'
+      body.style.position = 'fixed'
+      body.style.top = `-${scrollY}px`
+      body.style.left = '0'
+      body.style.right = '0'
+      html.style.setProperty('overscroll-behavior', 'none')
+      body.style.setProperty('overscroll-behavior', 'none')
 
       // Prevent touch scroll on the page behind the terminal on mobile
       const preventTouch = (e: TouchEvent) => {
@@ -203,8 +212,16 @@ export function TerminalOverlay() {
       return () => {
         html.style.overflow = ''
         body.style.overflow = ''
+        body.style.position = ''
+        body.style.top = ''
+        body.style.left = ''
+        body.style.right = ''
+        html.style.removeProperty('overscroll-behavior')
+        body.style.removeProperty('overscroll-behavior')
         document.removeEventListener('touchmove', preventTouch)
         document.removeEventListener('wheel', preventWheel)
+        // Restore scroll position
+        window.scrollTo(0, scrollY)
       }
     }
   }, [isOpen, isMinimized])

@@ -149,6 +149,8 @@ export function TerminalInput() {
     }
   }, [suggestions])
 
+  const isOpen = useAppSelector((s) => s.terminal.isOpen)
+
   const focusInput = useCallback(() => {
     if (!pickerMode) {
       requestAnimationFrame(() => inputRef.current?.focus())
@@ -157,7 +159,7 @@ export function TerminalInput() {
 
   useEffect(() => {
     focusInput()
-  }, [focusInput, isMaximized, isMinimized, bookingOpen])
+  }, [focusInput, isOpen, isMaximized, isMinimized, bookingOpen])
 
   function selectSuggestion(cmd: string) {
     dispatch(setInput(cmd))
@@ -197,7 +199,6 @@ export function TerminalInput() {
       if (e.key === 'Enter' && selectedIndex >= 0) {
         e.preventDefault()
         executeCommand(suggestions[selectedIndex])
-        inputRef.current?.blur()
         return
       }
     }
@@ -205,7 +206,6 @@ export function TerminalInput() {
     if (e.key === 'Enter') {
       dispatch(submitCommand())
       execute(input)
-      inputRef.current?.blur()
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
       dispatch(navigateHistory('up'))
