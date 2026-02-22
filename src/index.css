@@ -22,6 +22,8 @@ body {
   font-family: var(--font-sans);
   background-color: var(--color-background);
   color: var(--color-foreground);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 ::selection {

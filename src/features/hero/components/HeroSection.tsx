@@ -35,7 +35,7 @@ export function HeroSection() {
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-4 text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="mb-10 flex items-center justify-center gap-6 font-mono text-sm text-foreground/40"
+          className="mb-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-mono text-xs text-foreground/40 sm:text-sm"
         >
           <span>{t('years', { count: profile.stats.yearsExperience })}</span>
           <span className="text-cyan/30">&middot;</span>
@@ -93,7 +93,7 @@ export function HeroSection() {
         >
           <button
             onClick={() => dispatch(openBooking())}
-            className="group relative inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-cyan/30 bg-gradient-to-r from-cyan/10 to-purple/10 px-7 py-3 font-medium text-cyan shadow-[0_0_20px_rgba(0,245,255,0.08)] transition-all duration-300 hover:border-cyan/50 hover:shadow-[0_0_30px_rgba(0,245,255,0.15)] sm:w-auto"
+            className="group relative inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-cyan/30 bg-gradient-to-r from-cyan/10 to-purple/10 px-5 py-2.5 text-sm font-medium text-cyan shadow-[0_0_20px_rgba(0,245,255,0.08)] transition-all duration-300 hover:border-cyan/50 hover:shadow-[0_0_30px_rgba(0,245,255,0.15)] sm:w-auto sm:px-7 sm:py-3 sm:text-base"
           >
             <SiGooglecalendar size={16} />
             {t('bookMeeting')}
@@ -102,7 +102,7 @@ export function HeroSection() {
             href={lang === 'es' ? profile.resumeUrlEs : profile.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-card-border bg-card px-7 py-3 font-medium text-foreground/50 transition-all duration-300 hover:border-cyan/30 hover:text-foreground/80 hover:shadow-[0_0_20px_rgba(0,245,255,0.1)] sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-card-border bg-card px-5 py-2.5 text-sm font-medium text-foreground/50 transition-all duration-300 hover:border-cyan/30 hover:text-foreground/80 hover:shadow-[0_0_20px_rgba(0,245,255,0.1)] sm:w-auto sm:px-7 sm:py-3 sm:text-base"
           >
             <HiDownload size={18} className="transition-colors group-hover:text-cyan" />
             {t('downloadResume')}
@@ -111,7 +111,7 @@ export function HeroSection() {
             href={profile.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-card-border bg-card px-7 py-3 font-medium text-foreground/50 transition-all duration-300 hover:border-cyan/30 hover:text-foreground/80 hover:shadow-[0_0_20px_rgba(0,245,255,0.1)] sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-card-border bg-card px-5 py-2.5 text-sm font-medium text-foreground/50 transition-all duration-300 hover:border-cyan/30 hover:text-foreground/80 hover:shadow-[0_0_20px_rgba(0,245,255,0.1)] sm:w-auto sm:px-7 sm:py-3 sm:text-base"
           >
             <FaGithub size={18} className="transition-colors group-hover:text-cyan" />
             {t('github')}

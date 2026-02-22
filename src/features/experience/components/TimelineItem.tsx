@@ -22,7 +22,7 @@ export function TimelineItem({ item, index }: TimelineItemProps) {
       initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className={`relative flex ${isLeft ? 'md:justify-start' : 'md:justify-end'} md:w-1/2 ${isLeft ? 'md:pr-10 md:self-start' : 'md:pl-10 md:self-end'}`}
+      className={`relative flex w-full min-w-0 ${isLeft ? 'md:justify-start' : 'md:justify-end'} md:w-1/2 ${isLeft ? 'md:pr-10 md:self-start' : 'md:pl-10 md:self-end'}`}
     >
       {/* Pulsing dot */}
       <div
@@ -36,7 +36,7 @@ export function TimelineItem({ item, index }: TimelineItemProps) {
       </div>
 
       <div
-        className={`relative overflow-hidden rounded-xl border p-6 backdrop-blur-sm transition-colors ${
+        className={`relative min-w-0 overflow-hidden rounded-xl border p-4 backdrop-blur-sm transition-colors sm:p-6 ${
           item.current
             ? 'border-cyan/30 bg-card shadow-[0_0_25px_rgba(0,245,255,0.08)]'
             : 'border-card-border bg-card hover:border-cyan/20'

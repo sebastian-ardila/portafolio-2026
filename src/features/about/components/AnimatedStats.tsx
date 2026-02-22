@@ -49,7 +49,7 @@ export function AnimatedStats() {
   const { t } = useTranslation('about')
 
   return (
-    <div className="flex flex-wrap gap-x-8 gap-y-3">
+    <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 sm:gap-x-8">
       <StatItem label={t('stats.yearsExperience')} value={9} suffix="+" />
       <StatItem label={t('stats.technologies')} value={20} suffix="+" />
       <StatItem label={t('stats.cupsOfCoffee')} value={5000} suffix="+" />

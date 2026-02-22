@@ -43,7 +43,7 @@ export function AnimatedCard({
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       style={{ transformStyle: 'preserve-3d' }}
       className={cn(
-        'rounded-xl border border-card-border bg-card p-6 backdrop-blur-sm transition-colors',
+        'rounded-xl border border-card-border bg-card p-4 backdrop-blur-sm transition-colors sm:p-6',
         'hover:border-cyan/20 hover:bg-white/[0.07] hover:shadow-[0_0_20px_rgba(0,245,255,0.08)]',
         className
       )}

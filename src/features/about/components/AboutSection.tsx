@@ -145,14 +145,14 @@ export function AboutSection() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.3, delay: 0.7 + i * 0.06 }}
-                    className="group flex items-center gap-3 rounded-md px-2 py-1.5 transition-colors hover:bg-white/[0.03] sm:pl-5"
+                    className="group flex flex-wrap items-center gap-x-3 gap-y-0.5 rounded-md px-2 py-1.5 transition-colors hover:bg-white/[0.03] sm:flex-nowrap sm:pl-5"
                   >
                     <div className="hidden h-1.5 w-1.5 -translate-x-[23px] rounded-full border border-cyan/40 bg-background transition-colors group-hover:border-cyan group-hover:bg-cyan/30 sm:block" />
                     <span className="w-10 flex-shrink-0 font-mono text-xs font-semibold text-cyan/60">
                       {item.year}
                     </span>
-                    <span className="text-sm text-foreground/70">{item.role}</span>
-                    <span className="text-xs text-foreground/30">@ {item.company}</span>
+                    <span className="min-w-0 text-sm text-foreground/70">{item.role}</span>
+                    <span className="min-w-0 text-xs text-foreground/30">@ {item.company}</span>
                   </motion.div>
                 ))}
               </div>
