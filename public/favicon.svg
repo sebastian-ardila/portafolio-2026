@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .bg { fill: #0a0a0f; }
+    .accent { fill: #00f5ff; }
+    .light { fill: #f1f5f9; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; }
+      .accent { fill: #0891b2; }
+      .light { fill: #0f172a; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="6"/>
+  <!-- Left bracket < -->
+  <polygon class="accent" points="12,7 4,16 12,25 14.5,25 6.5,16 14.5,7"/>
+  <!-- Right bracket /> -->
+  <polygon class="accent" points="20,7 28,16 20,25 17.5,25 25.5,16 17.5,7"/>
+  <!-- Center slash / -->
+  <polygon class="light" points="18,8 14,24 15.8,24 19.8,8"/>
+</svg>

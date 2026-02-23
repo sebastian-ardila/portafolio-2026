@@ -16,6 +16,32 @@ import { useTerminalCommands } from '../hooks/useTerminalCommands'
 import { TerminalInput } from './TerminalInput'
 import { Tooltip } from '@/shared/components/Tooltip'
 
+function Linkify({ text, className }: { text: string; className?: string }) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g
+  const parts = text.split(urlRegex)
+  if (parts.length === 1) return <span className={className}>{text}</span>
+
+  return (
+    <span className={className}>
+      {parts.map((part, i) =>
+        urlRegex.test(part) ? (
+          <a
+            key={i}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan/80 underline underline-offset-4 transition-colors hover:text-cyan"
+          >
+            {part}
+          </a>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </span>
+  )
+}
+
 function InlineCommands({ text, onRunCommand }: { text: string; onRunCommand?: (cmd: string) => void }) {
   if (!onRunCommand) return <>{text}</>
 
@@ -97,7 +123,7 @@ function TerminalLine({ text, onRunCommand }: { text: string; onRunCommand?: (cm
     return (
       <>
         <span className="text-foreground/50">{kvMatch[1]}: </span>
-        <span className="text-cyan/80">{kvMatch[2]}</span>
+        <Linkify text={kvMatch[2]} className="text-cyan/80" />
       </>
     )
   }
