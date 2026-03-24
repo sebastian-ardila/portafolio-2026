@@ -88,6 +88,34 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+          className="mb-10 flex items-center justify-center gap-2 font-mono text-xs text-foreground/40 sm:text-sm"
+        >
+          <span>{t('currentlyAt')}</span>
+          <a
+            href="https://clinity.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-foreground/60 transition-colors hover:text-cyan"
+          >
+            <img src="/clinity-icon.svg" alt="Clinity" className="h-4 w-4" />
+            Clinity
+          </a>
+          <span className="text-cyan/30">&</span>
+          <a
+            href="https://www.runmyprocess.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-foreground/60 transition-colors hover:text-cyan"
+          >
+            <img src="/rmp-icon.png" alt="RunMyProcess" className="h-4 w-4" />
+            RunMyProcess
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0 }}
           className="flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4"
         >

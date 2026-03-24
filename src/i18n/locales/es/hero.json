@@ -8,6 +8,7 @@
   "viewAllPosts": "Ver todas las publicaciones",
   "years": "{{count}}+ a\u00f1os",
   "technologies": "{{count}}+ tecnolog\u00edas",
+  "currentlyAt": "Actualmente colaborando con",
   "roles": [
     "Director de Experiencia de Usuario",
     "Ingeniero Frontend Senior",

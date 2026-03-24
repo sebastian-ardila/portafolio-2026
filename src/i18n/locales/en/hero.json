@@ -8,6 +8,7 @@
   "viewAllPosts": "View all posts",
   "years": "{{count}}+ years",
   "technologies": "{{count}}+ technologies",
+  "currentlyAt": "Currently collaborating with",
   "roles": [
     "Director of User Experience",
     "Senior Frontend Engineer",
