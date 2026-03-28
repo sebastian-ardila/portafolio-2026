@@ -19,7 +19,7 @@ const PROJECT_TYPES: Option[] = [
 ]
 
 export function ContactForm() {
-  const { t } = useTranslation('skills')
+  const { t, i18n } = useTranslation('skills')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [projectType, setProjectType] = useState('')
@@ -43,7 +43,11 @@ export function ContactForm() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!projectType) return
-    const text = `Hi, I'm ${name} (${email}). Project: ${projectType}. ${message}`
+    const lang = i18n.language?.startsWith('es') ? 'es' : 'en'
+    const projectLabel = t(PROJECT_TYPES.find((o) => o.value === projectType)!.labelKey)
+    const text = lang === 'es'
+      ? `Hola, soy *${name}*\n📧 ${email}\n📋 Tipo de proyecto: *${projectLabel}*\n\n💬 ${message}`
+      : `Hi, I'm *${name}*\n📧 ${email}\n📋 Project type: *${projectLabel}*\n\n💬 ${message}`
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
     window.open(url, '_blank')
   }
