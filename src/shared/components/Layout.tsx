@@ -5,6 +5,7 @@ import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 import { ScrollProgress } from './ScrollProgress'
 import { BookingModal } from './BookingModal'
+import { ContactModal } from './ContactModal'
 import { ScrollToTop } from './ScrollToTop'
 import { Breadcrumb } from './Breadcrumb'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
@@ -32,6 +33,7 @@ export function Layout() {
       </main>
       <Footer />
       <BookingModal open={bookingOpen} onClose={() => dispatch(closeBooking())} />
+      <ContactModal />
     </div>
   )
 }

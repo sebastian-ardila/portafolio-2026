@@ -1,8 +1,22 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FaWhatsapp } from 'react-icons/fa'
+import { HiChevronDown, HiCheck } from 'react-icons/hi'
 
 const WHATSAPP_NUMBER = '573177822100'
+
+interface Option {
+  value: string
+  labelKey: string
+}
+
+const PROJECT_TYPES: Option[] = [
+  { value: 'Web Application', labelKey: 'contact.projectTypes.webapp' },
+  { value: 'Landing Page', labelKey: 'contact.projectTypes.landing' },
+  { value: 'Consulting', labelKey: 'contact.projectTypes.consulting' },
+  { value: 'Team Augmentation', labelKey: 'contact.projectTypes.augmentation' },
+  { value: 'Other', labelKey: 'contact.projectTypes.other' },
+]
 
 export function ContactForm() {
   const { t } = useTranslation('skills')
@@ -10,15 +24,35 @@ export function ContactForm() {
   const [email, setEmail] = useState('')
   const [projectType, setProjectType] = useState('')
   const [message, setMessage] = useState('')
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
+    }
+    if (dropdownOpen) {
+      document.addEventListener('mousedown', handleClick)
+      return () => document.removeEventListener('mousedown', handleClick)
+    }
+  }, [dropdownOpen])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if (!projectType) return
     const text = `Hi, I'm ${name} (${email}). Project: ${projectType}. ${message}`
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
     window.open(url, '_blank')
   }
 
   const inputClass = 'w-full rounded-lg border border-card-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/25 transition-colors focus:border-cyan/40 focus:outline-none'
+
+  const selectedLabel = projectType
+    ? t(PROJECT_TYPES.find((o) => o.value === projectType)!.labelKey)
+    : null
 
   return (
     <div className="rounded-2xl border border-cyan/10 bg-gradient-to-b from-card to-background p-6">
@@ -48,19 +82,46 @@ export function ContactForm() {
           placeholder={t('contact.emailPlaceholder')}
           className={inputClass}
         />
-        <select
-          required
-          value={projectType}
-          onChange={(e) => setProjectType(e.target.value)}
-          className={`${inputClass} ${!projectType ? 'text-foreground/25' : ''}`}
-        >
-          <option value="" disabled>{t('contact.projectTypePlaceholder')}</option>
-          <option value="Web Application">{t('contact.projectTypes.webapp')}</option>
-          <option value="Landing Page">{t('contact.projectTypes.landing')}</option>
-          <option value="Consulting">{t('contact.projectTypes.consulting')}</option>
-          <option value="Team Augmentation">{t('contact.projectTypes.augmentation')}</option>
-          <option value="Other">{t('contact.projectTypes.other')}</option>
-        </select>
+
+        {/* Custom dropdown */}
+        <div ref={dropdownRef} className="relative">
+          <button
+            type="button"
+            onClick={() => setDropdownOpen(!dropdownOpen)}
+            className={`${inputClass} flex items-center justify-between text-left ${
+              !projectType ? 'text-foreground/25' : 'text-foreground'
+            }`}
+          >
+            <span className="truncate">
+              {selectedLabel || t('contact.projectTypePlaceholder')}
+            </span>
+            <HiChevronDown
+              size={16}
+              className={`flex-shrink-0 text-foreground/30 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
+            />
+          </button>
+          {dropdownOpen && (
+            <div className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-lg border border-card-border bg-background shadow-xl">
+              {PROJECT_TYPES.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  onClick={() => {
+                    setProjectType(option.value)
+                    setDropdownOpen(false)
+                  }}
+                  className="flex w-full items-center justify-between px-4 py-2.5 text-left text-sm text-foreground/70 transition-colors hover:bg-cyan/5 hover:text-foreground"
+                >
+                  {t(option.labelKey)}
+                  {projectType === option.value && (
+                    <HiCheck size={14} className="text-cyan" />
+                  )}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
         <textarea
           required
           value={message}

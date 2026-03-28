@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { HiChat } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
 import { useAppDispatch } from '@/app/hooks'
 import { openTerminal } from '@/features/terminal/slices/terminalSlice'
@@ -36,10 +37,10 @@ export function Footer() {
           </a>
           <button
             onClick={() => dispatch(openTerminal())}
-            className="font-mono text-sm text-foreground/40 transition-colors hover:text-cyan"
-            aria-label="Open terminal"
+            className="text-foreground/40 transition-colors hover:text-cyan"
+            aria-label="Contact"
           >
-            {'>_'}
+            <HiChat size={20} />
           </button>
         </div>
       </div>
