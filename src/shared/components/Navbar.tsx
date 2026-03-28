@@ -183,6 +183,22 @@ export function Navbar() {
                 <HiHome size={20} className={isHome ? 'text-cyan' : 'text-foreground/30'} />
                 {t('nav.home')}
               </Link>
+              <Link
+                to="/#projects"
+                onClick={() => {
+                  setMobileOpen(false)
+                  // If already on home, scroll manually
+                  if (isHome) {
+                    setTimeout(() => {
+                      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+                    }, 100)
+                  }
+                }}
+                className="flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium text-foreground/60 transition-colors hover:bg-white/[0.04] hover:text-cyan"
+              >
+                <HiCollection size={20} className="text-foreground/30" />
+                {t('nav.projects')}
+              </Link>
               {PAGE_LINKS.map((link) => (
                 <Link
                   key={link.to}
