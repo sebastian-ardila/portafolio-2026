@@ -52,7 +52,7 @@ export function ContactForm() {
     window.open(url, '_blank')
   }
 
-  const inputClass = 'w-full rounded-lg border border-card-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/25 transition-colors focus:border-cyan/40 focus:outline-none'
+  const inputClass = 'w-full rounded-lg border border-card-border bg-background px-4 py-2.5 text-base sm:text-sm text-foreground placeholder:text-foreground/25 transition-colors focus:border-cyan/40 focus:outline-none'
 
   const selectedLabel = projectType
     ? t(PROJECT_TYPES.find((o) => o.value === projectType)!.labelKey)
