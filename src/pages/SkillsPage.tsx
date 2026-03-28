@@ -19,14 +19,11 @@ import {
   HiPuzzle, HiScale, HiDocumentSearch, HiEye,
 } from 'react-icons/hi'
 import { SectionWrapper } from '@/shared/components/SectionWrapper'
-import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { useAppSelector } from '@/app/hooks'
 import {
   selectFilteredSkills,
-  selectActiveCategory,
-  setActiveCategory,
 } from '@/features/skills/slices/skillsSlice'
-import { cn } from '@/shared/utils/cn'
-import type { ISkill, SkillCategory } from '@/app/types'
+import type { ISkill } from '@/app/types'
 import type { IconType } from 'react-icons'
 
 const iconMap: Record<string, IconType> = {
@@ -42,15 +39,6 @@ const iconMap: Record<string, IconType> = {
   HiUsers, HiLightningBolt, HiChartBar, HiRefresh,
   HiPuzzle, HiScale, HiDocumentSearch, HiEye,
 }
-
-const categoryKeys: { key: string; value: SkillCategory | 'all' }[] = [
-  { key: 'all', value: 'all' },
-  { key: 'frontend', value: 'frontend' },
-  { key: 'backend', value: 'backend' },
-  { key: 'tools', value: 'tools' },
-  { key: 'design', value: 'design' },
-  { key: 'leadership', value: 'leadership' },
-]
 
 function SkillModal({ skill, onClose }: { skill: ISkill; onClose: () => void }) {
   const { t } = useTranslation('skills')
@@ -110,10 +98,7 @@ function SkillModal({ skill, onClose }: { skill: ISkill; onClose: () => void }) 
 }
 
 export function SkillsPage() {
-  const dispatch = useAppDispatch()
   const filteredSkills = useAppSelector(selectFilteredSkills)
-  const activeCategory = useAppSelector(selectActiveCategory)
-  const { t } = useTranslation('skills')
   const [selectedSkill, setSelectedSkill] = useState<ISkill | null>(null)
 
   return (
