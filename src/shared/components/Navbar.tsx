@@ -9,11 +9,6 @@ import { cn } from '@/shared/utils/cn'
 import { LanguageSelector } from './LanguageSelector'
 import type { IconType } from 'react-icons'
 
-const NAV_KEYS = [
-  { key: 'projects', href: `#${SECTION_IDS.PROJECTS}`, icon: HiCollection },
-  { key: 'contact', href: `#${SECTION_IDS.CONTACT}`, icon: HiMail },
-] as const
-
 interface NavLinkItem {
   key: string
   to: string
@@ -36,6 +31,11 @@ export function Navbar() {
   const isHome = location.pathname === '/'
   const { t } = useTranslation('common')
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [location.pathname])
+
   useEffect(() => {
     function handleScroll() {
       setScrolled(window.scrollY > 50)
@@ -44,85 +44,106 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [mobileOpen])
+
   const isActive = (link: NavLinkItem) =>
     link.matchFn ? link.matchFn(location.pathname) : location.pathname === link.to
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={cn(
-        'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
-        scrolled
-          ? 'border-b border-card-border bg-background/80 backdrop-blur-md'
-          : 'bg-transparent'
-      )}
-    >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link to="/" className="text-lg font-bold tracking-tight">
-          <span className="text-cyan">&lt;</span>
-          SA
-          <span className="text-cyan">/&gt;</span>
-        </Link>
+    <>
+      {/* Top bar — always visible */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+        className={cn(
+          'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
+          scrolled
+            ? 'border-b border-card-border bg-background/80 backdrop-blur-md'
+            : 'bg-transparent'
+        )}
+      >
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+          <Link to="/" className="text-lg font-bold tracking-tight">
+            <span className="text-cyan">&lt;</span>
+            SA
+            <span className="text-cyan">/&gt;</span>
+          </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-6 md:flex">
-          {isHome &&
-            NAV_KEYS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+          {/* Desktop nav */}
+          <div className="hidden items-center gap-6 md:flex">
+            {isHome && (
+              <>
+                <a
+                  href={`#${SECTION_IDS.PROJECTS}`}
+                  className={cn(
+                    'flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-cyan',
+                    activeSection === SECTION_IDS.PROJECTS ? 'text-cyan' : 'text-foreground/60'
+                  )}
+                >
+                  <HiCollection size={14} />
+                  {t('nav.projects')}
+                </a>
+                <a
+                  href={`#${SECTION_IDS.CONTACT}`}
+                  className={cn(
+                    'flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-cyan',
+                    activeSection === SECTION_IDS.CONTACT ? 'text-cyan' : 'text-foreground/60'
+                  )}
+                >
+                  <HiMail size={14} />
+                  {t('nav.contact')}
+                </a>
+              </>
+            )}
+            {!isHome && (
+              <Link
+                to="/"
+                className="flex items-center gap-1.5 text-sm font-medium text-foreground/60 transition-colors hover:text-cyan"
+              >
+                <HiHome size={14} />
+                {t('nav.home')}
+              </Link>
+            )}
+            {PAGE_LINKS.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
                 className={cn(
                   'flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-cyan',
-                  activeSection === link.href.slice(1)
-                    ? 'text-cyan'
-                    : 'text-foreground/60'
+                  isActive(link) ? 'text-cyan' : 'text-foreground/60'
                 )}
               >
                 <link.icon size={14} />
                 {t(`nav.${link.key}`)}
-              </a>
+              </Link>
             ))}
-          {!isHome && (
-            <Link
-              to="/"
-              className="flex items-center gap-1.5 text-sm font-medium text-foreground/60 transition-colors hover:text-cyan"
-            >
-              <HiHome size={14} />
-              {t('nav.home')}
-            </Link>
-          )}
-          {PAGE_LINKS.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={cn(
-                'flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-cyan',
-                isActive(link) ? 'text-cyan' : 'text-foreground/60'
-              )}
-            >
-              <link.icon size={14} />
-              {t(`nav.${link.key}`)}
-            </Link>
-          ))}
-          <LanguageSelector />
-        </div>
+            <LanguageSelector />
+          </div>
 
-        {/* Mobile toggle */}
-        <div className="flex items-center gap-3 md:hidden">
-          <LanguageSelector />
-          <button
-            className="text-2xl"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <HiX /> : <HiMenuAlt3 />}
-          </button>
+          {/* Mobile toggle */}
+          <div className="flex items-center gap-3 md:hidden">
+            <LanguageSelector />
+            <button
+              className="text-2xl"
+              onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
+            >
+              <HiMenuAlt3 />
+            </button>
+          </div>
         </div>
-      </div>
+      </motion.nav>
 
-      {/* Mobile menu — fullscreen */}
+      {/* Mobile menu — fullscreen overlay, separate from nav */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -130,8 +151,8 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            style={{ backgroundColor: '#0a0a12' }}
-            className="fixed inset-0 z-[9999] flex flex-col md:hidden"
+            style={{ backgroundColor: '#0a0a12', position: 'fixed', inset: 0, zIndex: 9999 }}
+            className="flex flex-col md:hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5">
@@ -149,42 +170,32 @@ export function Navbar() {
               </button>
             </div>
 
-            {/* Nav links */}
+            {/* All nav links — always the same regardless of current page */}
             <div className="flex flex-col gap-1 px-6 pt-4">
-              {isHome &&
-                NAV_KEYS.map((link, i) => (
-                  <motion.a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.04 }}
-                    className="flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium text-foreground/60 transition-colors hover:bg-white/[0.04] hover:text-cyan"
-                  >
-                    <link.icon size={20} className="text-foreground/30" />
-                    {t(`nav.${link.key}`)}
-                  </motion.a>
-                ))}
-              {PAGE_LINKS.map((link, i) => (
-                <motion.div
+              <Link
+                to="/"
+                onClick={() => setMobileOpen(false)}
+                className={cn(
+                  'flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-colors hover:bg-white/[0.04]',
+                  isHome ? 'text-cyan' : 'text-foreground/60 hover:text-cyan'
+                )}
+              >
+                <HiHome size={20} className={isHome ? 'text-cyan' : 'text-foreground/30'} />
+                {t('nav.home')}
+              </Link>
+              {PAGE_LINKS.map((link) => (
+                <Link
                   key={link.to}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: (isHome ? 2 : 0) * 0.04 + i * 0.04 }}
+                  to={link.to}
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    'flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-colors hover:bg-white/[0.04]',
+                    isActive(link) ? 'text-cyan' : 'text-foreground/60 hover:text-cyan'
+                  )}
                 >
-                  <Link
-                    to={link.to}
-                    onClick={() => setMobileOpen(false)}
-                    className={cn(
-                      'flex items-center gap-4 rounded-xl px-4 py-3.5 text-base font-medium transition-colors hover:bg-white/[0.04]',
-                      isActive(link) ? 'text-cyan' : 'text-foreground/60 hover:text-cyan'
-                    )}
-                  >
-                    <link.icon size={20} className={isActive(link) ? 'text-cyan' : 'text-foreground/30'} />
-                    {t(`nav.${link.key}`)}
-                  </Link>
-                </motion.div>
+                  <link.icon size={20} className={isActive(link) ? 'text-cyan' : 'text-foreground/30'} />
+                  {t(`nav.${link.key}`)}
+                </Link>
               ))}
             </div>
 
@@ -195,6 +206,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   )
 }
