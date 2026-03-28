@@ -130,7 +130,8 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex flex-col bg-[#0a0a12] md:hidden"
+            style={{ backgroundColor: '#0a0a12' }}
+            className="fixed inset-0 z-[9999] flex flex-col md:hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5">
