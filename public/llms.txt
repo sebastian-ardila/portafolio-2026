@@ -1,0 +1,41 @@
+# Sebastian Ardila Agudelo - Professional Profile
+
+## Who
+Sebastian Ardila Agudelo is a Senior Frontend Engineer and Director of User Experience with 9+ years of experience based in Pereira, Colombia. Available for remote work worldwide.
+
+## Current Roles
+- Director of User Experience at RunMyProcess (AK Digital LLC) - since December 2024
+- Senior Full Stack Engineer, Architect & Business Development at Clinity - collaborator
+- CEO & Founder of Copairo
+
+## Core Skills
+- Frontend: React, TypeScript, JavaScript, Next.js, Redux, Tailwind CSS, HTML/CSS
+- Backend: Node.js, Express.js, PostgreSQL, MongoDB, GraphQL, REST APIs, Python
+- Cloud & DevOps: AWS (S3, CloudFront, EC2, ECS), Docker, Kubernetes, CI/CD, Vercel
+- AI Integration: OpenAI, Anthropic Claude, Google Gemini
+- Design: Figma, UI/UX Design, Accessibility (WCAG)
+- Leadership: Stakeholder Management, Technical Leadership, Product Strategy, Agile & Scrum
+
+## Career History
+- 2024-Present: Director of UX & Sr. Software Engineer at RunMyProcess
+- 2020-2023: Software Engineer II at VeriTran
+- 2019: Implementation Consultant at VeriTran
+- 2018-2019: Full Stack Developer at ExcelAscent
+- 2018: Backend Web Developer at Tecnología Digital 7
+- 2017-2018: Software Developer at Onyx Soft
+
+## Education
+Bachelor of Computer and Systems Engineering - Universidad Tecnológica de Pereira, 2017
+
+## Links
+- Website: https://sebastianardila.com
+- LinkedIn: https://www.linkedin.com/in/sebastian-ardila/
+- GitHub: https://github.com/sebastian-ardila
+- Clinity: https://clinity.ai
+- RunMyProcess: https://www.runmyprocess.com
+- Copairo: https://copairo.com
+
+## Contact
+- WhatsApp: +57 317 782 2100
+- Location: Pereira, Colombia
+- Available for: Remote work, consulting, collaboration

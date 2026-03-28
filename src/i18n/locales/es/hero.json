@@ -6,9 +6,8 @@
   "github": "GitHub",
   "latestPosts": "\u00daltimas publicaciones",
   "viewAllPosts": "Ver todas las publicaciones",
-  "years": "{{count}}+ a\u00f1os",
-  "technologies": "{{count}}+ tecnolog\u00edas",
-  "currentlyAt": "Actualmente colaborando con",
+  "yearsBadge": "años de experiencia",
+  "currentlyAt": "Actualmente en",
   "roles": [
     "Director de Experiencia de Usuario",
     "Ingeniero Frontend Senior",

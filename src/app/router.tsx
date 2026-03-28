@@ -15,6 +15,18 @@ const BlogPostPage = lazy(() =>
     default: m.BlogPostPage,
   }))
 )
+const AboutPage = lazy(() =>
+  import('@/pages/AboutPage').then((m) => ({ default: m.AboutPage }))
+)
+const ExperiencePage = lazy(() =>
+  import('@/pages/ExperiencePage').then((m) => ({ default: m.ExperiencePage }))
+)
+const MyLifePage = lazy(() =>
+  import('@/pages/MyLifePage').then((m) => ({ default: m.MyLifePage }))
+)
+const SkillsPage = lazy(() =>
+  import('@/pages/SkillsPage').then((m) => ({ default: m.SkillsPage }))
+)
 const NotFoundPage = lazy(() =>
   import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage }))
 )
@@ -45,6 +57,38 @@ export const router = createBrowserRouter([
         element: (
           <SuspenseWrapper>
             <HomePage />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: 'about',
+        element: (
+          <SuspenseWrapper>
+            <AboutPage />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: 'experience',
+        element: (
+          <SuspenseWrapper>
+            <ExperiencePage />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: 'skills',
+        element: (
+          <SuspenseWrapper>
+            <SkillsPage />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: 'my-life',
+        element: (
+          <SuspenseWrapper>
+            <MyLifePage />
           </SuspenseWrapper>
         ),
       },

@@ -1,30 +1,24 @@
-import { useEffect } from 'react'
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaTerminal } from 'react-icons/fa'
+import { FaGithub } from 'react-icons/fa'
 import { HiArrowDown, HiDownload } from 'react-icons/hi'
 import { SiGooglecalendar } from 'react-icons/si'
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ParticleBackground } from './ParticleBackground'
 import { TypingIntro } from './TypingIntro'
 import { profile } from '@/config/profile'
 import { SECTION_IDS } from '@/shared/utils/constants'
-import { useAppDispatch, useAppSelector } from '@/app/hooks'
-import { openTerminal } from '@/features/terminal/slices/terminalSlice'
+import { useAppDispatch } from '@/app/hooks'
 import { openBooking } from '@/shared/slices/bookingSlice'
-import { fetchPosts, selectFilteredPosts } from '@/features/blog/slices/blogSlice'
 
 export function HeroSection() {
   const dispatch = useAppDispatch()
-  const posts = useAppSelector(selectFilteredPosts)
   const { t, i18n } = useTranslation('hero')
   const lang = i18n.language?.startsWith('es') ? 'es' : 'en'
 
-  useEffect(() => {
-    dispatch(fetchPosts(lang))
-  }, [dispatch, lang])
-
-  const latestPosts = posts.slice(0, 6)
+  const yearsOfExperience = useMemo(() => {
+    return new Date().getFullYear() - 2017
+  }, [])
 
   return (
     <section
@@ -51,18 +45,32 @@ export function HeroSection() {
           transition={{ delay: 0.4 }}
           className="mb-4 text-4xl font-bold sm:text-5xl md:text-7xl"
         >
-          {profile.name.split(' ').map((word, i) => (
-            <span key={word}>
-              {i === 0 ? (
-                <span className="bg-gradient-to-r from-cyan to-purple bg-clip-text text-transparent">
-                  {word}
+          {profile.name.split(' ').map((word, i) => {
+            if (i === 0) {
+              return (
+                <span key={word}>
+                  <span className="bg-gradient-to-r from-cyan to-purple bg-clip-text text-transparent">
+                    {word}
+                  </span>
                 </span>
-              ) : (
-                ` ${word}`
-              )}
-            </span>
-          ))}
+              )
+            }
+            // "Agudelo" hidden for SEO
+            if (word === 'Agudelo') {
+              return <span key={word} className="sr-only"> {word}</span>
+            }
+            return <span key={word}> {word}</span>
+          })}
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mb-6 font-mono text-xs text-foreground/40 sm:text-sm"
+        >
+          +{yearsOfExperience} {t('yearsBadge')}
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,17 +86,6 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="mb-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-mono text-xs text-foreground/40 sm:text-sm"
-        >
-          <span>{t('years', { count: profile.stats.yearsExperience })}</span>
-          <span className="text-cyan/30">&middot;</span>
-          <span>{t('technologies', { count: profile.stats.technologiesMastered })}</span>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
           className="mb-10 flex items-center justify-center gap-2 font-mono text-xs text-foreground/40 sm:text-sm"
         >
           <span>{t('currentlyAt')}</span>
@@ -96,7 +93,7 @@ export function HeroSection() {
             href="https://clinity.ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-foreground/60 transition-colors hover:text-cyan"
+            className="inline-flex items-center gap-1 text-foreground/60 transition-colors hover:text-cyan"
           >
             <img src="/clinity-icon.svg" alt="Clinity" className="h-4 w-4" />
             Clinity
@@ -106,10 +103,10 @@ export function HeroSection() {
             href="https://www.runmyprocess.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-foreground/60 transition-colors hover:text-cyan"
+            className="inline-flex items-center gap-1 text-foreground/60 transition-colors hover:text-cyan"
           >
             <img src="/rmp-icon.png" alt="RunMyProcess" className="h-4 w-4" />
-            RunMyProcess
+            RMP
           </a>
         </motion.div>
 
@@ -145,59 +142,6 @@ export function HeroSection() {
             {t('github')}
           </a>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
-          className="mt-8"
-        >
-          <button
-            onClick={() => dispatch(openTerminal())}
-            aria-label="Open interactive terminal"
-            className="group inline-flex cursor-pointer items-center gap-2 rounded-lg border border-cyan/10 bg-[#0d0d14]/80 px-4 py-2 font-mono text-xs text-foreground/40 transition-all hover:border-cyan/30 hover:text-cyan hover:shadow-[0_0_20px_rgba(0,245,255,0.1)]"
-          >
-            <FaTerminal className="text-cyan/50 transition-colors group-hover:text-cyan" />
-            <span className="text-cyan/50 transition-colors group-hover:text-cyan">$</span>
-            {' '}{t('openTerminal')}
-            <span className="ml-1 animate-pulse text-cyan">_</span>
-          </button>
-        </motion.div>
-
-        {latestPosts.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-            className="mt-10 flex flex-col items-center gap-3"
-          >
-            <span className="font-mono text-xs uppercase tracking-widest text-cyan/40">
-              {t('latestPosts')}
-            </span>
-            <div className="mx-auto w-full max-w-xl space-y-1">
-              {latestPosts.map((post) => (
-                <Link
-                  key={post.slug}
-                  to={`/blog/${post.slug}`}
-                  className="group/post flex items-center justify-between rounded-md px-3 py-1.5 transition-colors hover:bg-white/[0.03]"
-                >
-                  <span className="truncate text-xs text-foreground/40 transition-colors group-hover/post:text-cyan">
-                    {post.title}
-                  </span>
-                  <span className="ml-4 flex-shrink-0 font-mono text-[10px] text-foreground/20">
-                    {post.date}
-                  </span>
-                </Link>
-              ))}
-            </div>
-            <Link
-              to="/blog"
-              className="mt-1 font-mono text-xs text-cyan/40 transition-colors hover:text-cyan"
-            >
-              {t('viewAllPosts')} &rarr;
-            </Link>
-          </motion.div>
-        )}
       </div>
 
       <motion.a

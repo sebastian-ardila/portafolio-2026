@@ -30,7 +30,7 @@ export function BlogSection() {
         {t('heading')}
       </h3>
 
-      <div className="mb-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className={`mb-10 grid gap-6 sm:grid-cols-2 ${previewPosts.length >= 3 ? 'lg:grid-cols-3' : ''}`}>
         {previewPosts.map((post, i) => (
           <motion.div
             key={post.slug}

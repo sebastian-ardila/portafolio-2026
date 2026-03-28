@@ -1,29 +1,15 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import { SectionWrapper } from '@/shared/components/SectionWrapper'
-import { SkillCard } from './SkillCard'
-import { useAppDispatch, useAppSelector } from '@/app/hooks'
-import {
-  selectFilteredSkills,
-  selectActiveCategory,
-  setActiveCategory,
-} from '../slices/skillsSlice'
 import { SECTION_IDS } from '@/shared/utils/constants'
-import { cn } from '@/shared/utils/cn'
-import type { SkillCategory } from '@/app/types'
+import { skills } from '@/config/skills'
 
-const categoryKeys: { key: string; value: SkillCategory | 'all' }[] = [
-  { key: 'all', value: 'all' },
-  { key: 'frontend', value: 'frontend' },
-  { key: 'backend', value: 'backend' },
-  { key: 'tools', value: 'tools' },
-  { key: 'design', value: 'design' },
-]
+const topSkills = [...skills]
+  .sort((a, b) => b.years - a.years)
+  .slice(0, 14)
 
 export function SkillsSection() {
-  const dispatch = useAppDispatch()
-  const filteredSkills = useAppSelector(selectFilteredSkills)
-  const activeCategory = useAppSelector(selectActiveCategory)
   const { t } = useTranslation('skills')
 
   return (
@@ -31,39 +17,40 @@ export function SkillsSection() {
       <h2 className="mb-2 text-center text-sm font-semibold uppercase tracking-widest text-cyan">
         {t('sectionLabel')}
       </h2>
-      <h3 className="mb-8 text-center text-3xl font-bold sm:text-4xl">
+      <h3 className="mb-10 text-center text-3xl font-bold sm:text-4xl">
         {t('heading')}
       </h3>
 
-      <div className="mb-10 flex flex-wrap justify-center gap-2">
-        {categoryKeys.map((cat) => (
-          <button
-            key={cat.value}
-            onClick={() => dispatch(setActiveCategory(cat.value))}
-            className={cn(
-              'rounded-full px-4 py-1.5 text-sm font-medium transition-all',
-              activeCategory === cat.value
-                ? 'bg-cyan/20 text-cyan shadow-[0_0_15px_rgba(0,245,255,0.15)]'
-                : 'text-foreground/50 hover:text-foreground/80'
-            )}
+      <div className="mx-auto flex max-w-xl flex-wrap items-center justify-center gap-x-3 gap-y-2">
+        {topSkills.map((skill, i) => (
+          <motion.span
+            key={skill.name}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: i * 0.05 }}
+            className="text-sm text-foreground/50"
           >
-            {t(`categories.${cat.key}`)}
-          </button>
+            {skill.name}
+            {i < topSkills.length - 1 && (
+              <span className="ml-3 text-foreground/15">·</span>
+            )}
+          </motion.span>
         ))}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {filteredSkills.map((skill, i) => (
-          <motion.div
-            key={skill.name}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.05 }}
-          >
-            <SkillCard skill={skill} />
-          </motion.div>
-        ))}
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="mt-4 text-center"
+      >
+        <Link
+          to="/skills"
+          className="font-mono text-xs text-foreground/30 transition-colors hover:text-cyan"
+        >
+          {t('viewMore')}
+        </Link>
+      </motion.div>
     </SectionWrapper>
   )
 }

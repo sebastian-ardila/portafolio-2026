@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { HiArrowLeft } from 'react-icons/hi'
+import { FaLinkedin } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import { MarkdownRenderer } from './MarkdownRenderer'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
@@ -50,7 +51,17 @@ export function BlogPostPage() {
 
       <header className="mb-10">
         <h1 className="mb-4 text-3xl font-bold sm:text-4xl">{post.title}</h1>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <a
+            href="https://www.linkedin.com/in/sebastian-ardila/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-foreground/50 transition-colors hover:text-cyan"
+          >
+            <FaLinkedin size={14} className="text-cyan/60" />
+            Sebastian Ardila
+          </a>
+          <span className="text-foreground/20">&middot;</span>
           <span className="font-mono text-sm text-foreground/40">
             {post.date}
           </span>

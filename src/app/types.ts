@@ -26,7 +26,16 @@ export interface ISkill {
   description: string
 }
 
-export type SkillCategory = 'frontend' | 'backend' | 'tools' | 'design'
+export type SkillCategory = 'frontend' | 'backend' | 'tools' | 'design' | 'leadership'
+
+export interface IParallelProject {
+  name: string
+  role: string
+  description: string
+  technologies: string[]
+  url?: string
+  period?: string
+}
 
 export interface IExperience {
   id: string
@@ -36,7 +45,16 @@ export interface IExperience {
   description: string
   technologies: string[]
   current?: boolean
+  companyUrl?: string
+  parallel?: IParallelProject[]
 }
+
+export interface IProjectLink {
+  label: string
+  url: string
+}
+
+export type ProjectType = 'work' | 'personal' | 'collaboration'
 
 export interface IProject {
   id: string
@@ -45,9 +63,11 @@ export interface IProject {
   longDescription: string
   technologies: string[]
   image: string
-  liveUrl?: string
+  icon?: string
+  liveUrls?: IProjectLink[]
   repoUrl?: string
   featured: boolean
+  type: ProjectType
 }
 
 export interface IAchievement {

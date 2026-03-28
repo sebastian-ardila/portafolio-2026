@@ -50,17 +50,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        <div className="flex gap-3">
-          {project.liveUrl && (
+        <div className="flex flex-wrap gap-3">
+          {project.liveUrls?.map((link) => (
             <a
-              href={project.liveUrl}
+              key={link.url}
+              href={link.url}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-xs text-foreground/40 transition-colors hover:text-cyan"
             >
-              <FaExternalLinkAlt size={12} /> {t('live')}
+              <FaExternalLinkAlt size={12} /> {link.label}
             </a>
-          )}
+          ))}
           {project.repoUrl && (
             <a
               href={project.repoUrl}

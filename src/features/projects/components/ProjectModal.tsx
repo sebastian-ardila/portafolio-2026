@@ -57,12 +57,12 @@ export function ProjectModal() {
               {t(`items.${project.id}.longDescription`, { defaultValue: project.longDescription })}
             </p>
 
-            <div className="flex gap-4">
-              {project.liveUrl && (
-                <GlowButton as="a" href={project.liveUrl} variant="primary">
-                  <FaExternalLinkAlt size={14} /> {t('liveDemo')}
+            <div className="flex flex-wrap gap-4">
+              {project.liveUrls?.map((link) => (
+                <GlowButton key={link.url} as="a" href={link.url} variant="primary">
+                  <FaExternalLinkAlt size={14} /> {link.label}
                 </GlowButton>
-              )}
+              ))}
               {project.repoUrl && (
                 <GlowButton as="a" href={project.repoUrl} variant="secondary">
                   <FaGithub size={14} /> {t('sourceCode')}

@@ -4,7 +4,15 @@ import {
   SiFigma, SiGraphql,
   SiSocketdotio, SiMongodb, SiExpress,
   SiJest, SiConfluence, SiOpenapiinitiative, SiAntdesign,
+  SiNextdotjs, SiGooglesearchconsole, SiPostgresql, SiPython,
+  SiDocker, SiKubernetes, SiAmazons3, SiAmazonwebservices,
+  SiAmazonec2, SiAmazonecs, SiGithubactions, SiOpenai,
+  SiAnthropic, SiGooglegemini, SiVercel,
 } from 'react-icons/si'
+import {
+  HiUsers, HiLightningBolt, HiChartBar, HiRefresh,
+  HiPuzzle, HiScale, HiDocumentSearch, HiEye,
+} from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
 import { AnimatedCard } from '@/shared/components/AnimatedCard'
 import { AchievementBadge } from './AchievementBadge'
@@ -17,6 +25,12 @@ const iconMap: Record<string, IconType> = {
   SiFigma, SiGraphql,
   SiSocketdotio, SiMongodb, SiExpress,
   SiJest, SiConfluence, SiOpenapiinitiative, SiAntdesign,
+  SiNextdotjs, SiGooglesearchconsole, SiPostgresql, SiPython,
+  SiDocker, SiKubernetes, SiAmazons3, SiAmazonwebservices,
+  SiAmazonec2, SiAmazonecs, SiGithubactions, SiOpenai,
+  SiAnthropic, SiGooglegemini, SiVercel,
+  HiUsers, HiLightningBolt, HiChartBar, HiRefresh,
+  HiPuzzle, HiScale, HiDocumentSearch, HiEye,
 }
 
 interface SkillCardProps {

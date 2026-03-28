@@ -1,11 +1,18 @@
 {
   "sectionLabel": "My Work",
-  "heading": "Projects",
+  "heading": "Projects & Experience",
   "live": "Live",
   "code": "Code",
   "liveDemo": "Live Demo",
   "sourceCode": "Source Code",
+  "tableProject": "Project",
+  "tableSkills": "Skills",
   "items": {
+    "clinity": {
+      "title": "Clinity",
+      "description": "Strategic technology execution partnership platform.",
+      "longDescription": "Collaborating as Senior Full Stack Engineer, Architect, and Business Development at Clinity. Building the platform with Next.js, focusing on scalable architecture and strategic growth."
+    },
     "rmp-lowcode": {
       "title": "RunMyProcess Low-Code Platform",
       "description": "Enterprise low-code platform with rendering engine and 50+ custom components.",
@@ -16,10 +23,35 @@
       "description": "Low-code platform for financial institutions with real-time features.",
       "longDescription": "Enhanced a low-code platform serving financial institutions using React.js and TypeScript. Contributed to transitioning from pure JavaScript to a component-based architecture. Integrated WebSockets for real-time communication. Built visual construction tools including drag & drop guides and zoom-based component adjustments. Improved performance via code splitting."
     },
-    "crypto-platform": {
-      "title": "Crypto Payment & Investment Platform",
-      "description": "Cryptocurrency payment system with real-time price tracking.",
-      "longDescription": "Built a cryptocurrency payment and investment management system with a dynamic React.js frontend. Led a team of two developers and a UX designer. Migrated the project to Remix.js and implemented GraphQL to unify the API schema. Developed real-time price visualization with Socket.io. Managed MongoDB for large volumes of transactional data."
+    "mudanzas-pereira": {
+      "title": "Mudanzas Pereira",
+      "description": "Landing page for a moving services company in Pereira, Colombia.",
+      "longDescription": "Designed and developed a professional landing page for a local moving company. Focused on SEO optimization, fast load times, and a clear call-to-action to drive customer inquiries."
+    },
+    "copairo": {
+      "title": "Copairo",
+      "description": "Web platform for Copairo brand and services.",
+      "longDescription": "Built the web presence for Copairo, delivering a modern and responsive experience that highlights the brand identity and services offered."
+    },
+    "pirogramei": {
+      "title": "Pirogramei",
+      "description": "Web project showcasing Pirogramei content and services.",
+      "longDescription": "Developed a static site for Pirogramei with a focus on clean design, accessibility, and fast performance using GitHub Pages for hosting."
+    },
+    "cafe-independencia": {
+      "title": "Café Independencia",
+      "description": "Website for a local coffee shop showcasing their menu and story.",
+      "longDescription": "Created a visually appealing website for Café Independencia, highlighting their menu, story, and location. Built as a static site hosted on GitHub Pages."
+    },
+    "cspereira": {
+      "title": "CS Pereira",
+      "description": "Web platform for CS Pereira organization.",
+      "longDescription": "Developed a web platform for CS Pereira, providing information about the organization and its activities. Hosted on GitHub Pages with a responsive design."
+    },
+    "casa-asterion": {
+      "title": "Casa de Asterión Ediciones",
+      "description": "Website for an independent publishing house.",
+      "longDescription": "Built the web presence for Casa de Asterión Ediciones, an independent publishing house. The site showcases their catalog, authors, and editorial philosophy."
     },
     "compiler-pl0": {
       "title": "PL/0 Compiler in Python",

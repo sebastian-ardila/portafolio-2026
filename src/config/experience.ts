@@ -10,6 +10,25 @@ export const experience: IExperience[] = [
       'Led the implementation of a new user experience and the development team at RunMyProcess, driving the complete redesign of the platform with a focus on scalable architecture, UX improvements, and performance optimization. Developed and integrated components for the rendering engine, improving page load times by 35% and reducing visual rendering errors by 40%. Optimized the internal low-code platform reducing bugs by 25% and improving build performance by 20%. Maintained technical documentation covering 50+ components in Confluence.',
     technologies: ['React', 'TypeScript', 'Low-Code', 'Confluence', 'Figma'],
     current: true,
+    companyUrl: 'https://www.runmyprocess.com',
+    parallel: [
+      {
+        name: 'Clinity',
+        role: 'Collaborator · Sr. Full Stack Engineer & Architect · Business Development',
+        description: 'Strategic technology execution partnership. Building the platform with Next.js, contributing to architecture decisions and business development.',
+        technologies: ['Next.js', 'React', 'TypeScript', 'Architecture'],
+        url: 'https://clinity.ai',
+        period: 'Mar 2026 - Present',
+      },
+      {
+        name: 'Copairo',
+        role: 'Founder · CEO & CTO',
+        description: 'Founded and built the web platform for Copairo, delivering a modern brand experience with Next.js focused on identity and growth.',
+        technologies: ['Next.js', 'React', 'Branding', 'Business Strategy'],
+        url: 'https://copairo.com',
+        period: 'Mar 2026 - Present',
+      },
+    ],
   },
   {
     id: 'rmp-senior',
@@ -19,6 +38,7 @@ export const experience: IExperience[] = [
     description:
       'Led a multidisciplinary team of 8+ developers and designers to modernize the landing page, documentation site, and internal low-code platform, increasing user engagement by 25%. Spearheaded a comprehensive UI redesign with a focus on scalable architecture and usability, improving scores by 30%. Collaborated with international teams across India, USA, Morocco, Japan, Australia, and Colombia.',
     technologies: ['React', 'TypeScript', 'AI Integration', 'UI/UX'],
+    companyUrl: 'https://www.runmyprocess.com',
   },
   {
     id: 'veritran-engineer',
@@ -28,6 +48,7 @@ export const experience: IExperience[] = [
     description:
       'Enhanced and expanded a low-code platform for financial institutions using React.js and TypeScript. Contributed to transitioning the platform from pure JavaScript to a component-based system. Integrated Node.js and WebSockets for real-time communication. Built visual construction tools including drag & drop guides and zoom-based component adjustments. Improved performance for large data volumes via code splitting.',
     technologies: ['React', 'TypeScript', 'Node.js', 'WebSockets', 'Code Splitting'],
+    companyUrl: 'https://www.veritran.com',
   },
   {
     id: 'veritran-consultant',
@@ -37,6 +58,7 @@ export const experience: IExperience[] = [
     description:
       'Supported the integration of the low-code platform at BancoEstado. Developed frontend interfaces using HTML, CSS, and JavaScript to improve customer interaction with banking services. Applied frontend and backend technologies to enhance accessibility and user experience in financial platforms.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Banking Integration'],
+    companyUrl: 'https://www.veritran.com',
   },
   {
     id: 'excelascent',
@@ -64,5 +86,6 @@ export const experience: IExperience[] = [
     description:
       'Developed applications to enhance operational management for chain restaurants. Used rapid development tools (Webdev, Windev) to deploy new features efficiently. Optimized order management, payment processing, and inventory handling systems.',
     technologies: ['Webdev', 'Windev', 'Rapid Development'],
+    companyUrl: 'https://onyxerp.com.co/',
   },
 ]

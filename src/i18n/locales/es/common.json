@@ -6,7 +6,8 @@
     "projects": "Proyectos",
     "contact": "Contacto",
     "blog": "Blog",
-    "home": "Inicio"
+    "home": "Inicio",
+    "myLife": "Mi Vida"
   },
   "footer": {
     "copyright": "\u00a9 {{year}} {{name}}. Hecho con React & TypeScript."

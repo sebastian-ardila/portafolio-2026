@@ -1,12 +1,30 @@
 {
   "sectionLabel": "Habilidades y Experiencia",
   "heading": "\u00c1rbol de Habilidades",
+  "viewMore": "ver más...",
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "¿Tienes un proyecto en mente o quieres colaborar? Conversemos.",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "tu@email.com",
+    "projectTypePlaceholder": "¿Qué estás buscando?",
+    "projectTypes": {
+      "webapp": "Aplicación Web",
+      "landing": "Landing Page",
+      "consulting": "Consultoría Técnica",
+      "augmentation": "Refuerzo de Equipo",
+      "other": "Otro"
+    },
+    "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "send": "Enviar por WhatsApp"
+  },
   "categories": {
     "all": "Todas",
     "frontend": "Frontend",
     "backend": "Backend",
     "tools": "Herramientas",
-    "design": "Dise\u00f1o"
+    "design": "Dise\u00f1o",
+    "leadership": "Liderazgo"
   },
   "descriptions": {
     "React": "Lider\u00e9 el equipo de desarrollo detr\u00e1s del redise\u00f1o de la plataforma RunMyProcess, construyendo m\u00e1s de 50 componentes para el motor de renderizado y mejorando los tiempos de carga en un 35%. Contribu\u00ed a la transici\u00f3n del c\u00f3digo de JS puro a una arquitectura basada en componentes en VeriTran. Constru\u00ed el frontend de pagos crypto en ExcelAscent.",
@@ -25,6 +43,29 @@
     "Git": "Control de versiones y colaboraci\u00f3n en todos los roles profesionales, gestionando bases de c\u00f3digo con m\u00faltiples contribuidores y flujos de lanzamiento.",
     "Confluence": "Mantuve documentaci\u00f3n t\u00e9cnica cubriendo m\u00e1s de 50 componentes para el motor de renderizado RunMyProcess y gu\u00edas de plataforma interna.",
     "Figma": "Lider\u00e9 el prototipado UX y dise\u00f1o para el redise\u00f1o de la plataforma RunMyProcess, definiendo la nueva experiencia de usuario y colaborando con el equipo de desarrollo para implementar interfaces pixel-perfect.",
-    "UI/UX Design": "Lider\u00e9 la implementaci\u00f3n de una nueva experiencia de usuario en RunMyProcess, impulsando un redise\u00f1o integral de UI que mejor\u00f3 la usabilidad en un 30% y definiendo el roadmap UX en 3 l\u00edneas de producto. Constru\u00ed herramientas de construcci\u00f3n visual con drag & drop en VeriTran."
+    "UI/UX Design": "Lider\u00e9 la implementaci\u00f3n de una nueva experiencia de usuario en RunMyProcess, impulsando un redise\u00f1o integral de UI que mejor\u00f3 la usabilidad en un 30% y definiendo el roadmap UX en 3 l\u00edneas de producto. Constru\u00ed herramientas de construcci\u00f3n visual con drag & drop en VeriTran.",
+    "Stakeholder Management": "Aline\u00e9 decisiones t\u00e9cnicas con objetivos de negocio en m\u00faltiples l\u00edneas de producto. Facilit\u00e9 la comunicaci\u00f3n entre equipos de ingenier\u00eda, producto y ejecutivos.",
+    "Technical Leadership": "Lider\u00e9 equipos frontend, defin\u00ed direcci\u00f3n t\u00e9cnica, realic\u00e9 code reviews y mentor\u00e9 desarrolladores junior. Impuls\u00e9 decisiones de arquitectura para redise\u00f1os de plataforma.",
+    "Product Strategy": "Defin\u00ed el roadmap UX en 3 l\u00edneas de producto en RunMyProcess. Prioric\u00e9 funcionalidades basado en investigaci\u00f3n de usuarios, impacto de negocio y viabilidad t\u00e9cnica.",
+    "Agile & Scrum": "Trabaj\u00e9 en entornos \u00c1giles con planificaci\u00f3n de sprints, retrospectivas y daily standups. Lider\u00e9 ceremonias de sprint y refinamiento de backlog.",
+    "Cross-functional Collaboration": "Coordin\u00e9 entre equipos de ingenier\u00eda, dise\u00f1o, QA y producto para entregar funcionalidades cohesivas. Facilit\u00e9 talleres y revisiones de dise\u00f1o.",
+    "Strategic Negotiation": "Negoci\u00e9 alcance t\u00e9cnico, plazos y asignaci\u00f3n de recursos con stakeholders. Balanc\u00e9 demandas de negocio con capacidad de ingenier\u00eda.",
+    "Business Analysis": "Traduje requerimientos de negocio a especificaciones t\u00e9cnicas. Realic\u00e9 an\u00e1lisis competitivo e investigaci\u00f3n de usuarios para informar decisiones de producto.",
+    "Next.js": "Constru\u00ed aplicaciones full-stack con Next.js para Clinity y m\u00faltiples proyectos personales incluyendo Copairo, Mudanzas Pereira, Caf\u00e9 Independencia y Casa de Asteri\u00f3n.",
+    "SEO": "Optimic\u00e9 aplicaciones web para motores de b\u00fasqueda con datos estructurados, meta tags, Open Graph, generaci\u00f3n de sitemaps y optimizaci\u00f3n de Core Web Vitals.",
+    "PostgreSQL": "Dise\u00f1\u00e9 y gestion\u00e9 bases de datos relacionales para aplicaciones web, manejando migraciones, consultas y modelado de datos.",
+    "Python": "Constru\u00ed un compilador PL/0, scripts de automatizaci\u00f3n y servicios backend. Usado para procesamiento de datos e integraciones de IA.",
+    "Docker": "Conteneriz\u00e9 aplicaciones para entornos de desarrollo y despliegue consistentes. Constru\u00ed im\u00e1genes Docker multi-stage para producci\u00f3n.",
+    "Kubernetes": "Orquest\u00e9 despliegues contenerizados, gestion\u00e9 escalado y descubrimiento de servicios para aplicaciones cloud-native.",
+    "AWS S3": "Gestion\u00e9 almacenamiento de activos est\u00e1ticos, carga de archivos y distribuci\u00f3n de contenido para aplicaciones web.",
+    "AWS CloudFront": "Configur\u00e9 distribuci\u00f3n CDN para entrega r\u00e1pida de contenido global con dominios personalizados y certificados SSL.",
+    "AWS EC2": "Despliegu\u00e9 y gestion\u00e9 servidores virtuales para aplicaciones web y servicios backend.",
+    "AWS ECS": "Gestion\u00e9 orquestaci\u00f3n de contenedores en AWS para despliegues escalables de aplicaciones.",
+    "CI/CD": "Configur\u00e9 pipelines de integraci\u00f3n y despliegue continuo con GitHub Actions, automatizando flujos de pruebas, compilaci\u00f3n y despliegue.",
+    "OpenAI": "Integr\u00e9 APIs de OpenAI para funcionalidades impulsadas por IA incluyendo generaci\u00f3n de texto, embeddings y asistentes inteligentes.",
+    "Anthropic": "Integr\u00e9 la API de Claude para flujos de trabajo impulsados por IA, generaci\u00f3n de c\u00f3digo y automatizaci\u00f3n inteligente.",
+    "Google Gemini": "Explor\u00e9 la API de Gemini para capacidades de IA multimodal y generaci\u00f3n de contenido.",
+    "Vercel": "Despliegu\u00e9 y gestion\u00e9 aplicaciones Next.js en Vercel con dominios personalizados, edge functions y analytics.",
+    "Accessibility": "Implement\u00e9 directrices WCAG, HTML sem\u00e1ntico, atributos ARIA y navegaci\u00f3n por teclado para garantizar experiencias web inclusivas."
   }
 }

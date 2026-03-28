@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Navbar } from './Navbar'
 import { Footer } from './Footer'
 import { ScrollProgress } from './ScrollProgress'
 import { BookingModal } from './BookingModal'
+import { ScrollToTop } from './ScrollToTop'
+import { Breadcrumb } from './Breadcrumb'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 import { closeBooking } from '@/shared/slices/bookingSlice'
 
@@ -12,6 +14,8 @@ export function Layout() {
   const dispatch = useAppDispatch()
   const bookingOpen = useAppSelector((s) => s.booking.isOpen)
   const { i18n } = useTranslation()
+  const location = useLocation()
+  const isHome = location.pathname === '/'
 
   useEffect(() => {
     document.documentElement.lang = i18n.language?.startsWith('es') ? 'es' : 'en'
@@ -19,8 +23,10 @@ export function Layout() {
 
   return (
     <div className="min-h-screen">
+      <ScrollToTop />
       <ScrollProgress />
       <Navbar />
+      {!isHome && <Breadcrumb />}
       <main>
         <Outlet />
       </main>
